@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     pictureBtn = new QPushButton(tr("图片相关"));
     connect(pictureBtn, SIGNAL(clicked()), this, SLOT(changeWidget1()));
     mainWidget = new MainWidget();
-
     firstLayout = new QVBoxLayout();
     firstLayout->addWidget(homePageBtn);
     firstLayout->addWidget(pictureBtn);
@@ -23,6 +22,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     w = new QWidget();
     w->setLayout(mainLayout);
+
+    // 设置模态,以阻塞其他操作
+//    setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
+//    setWindowModality(Qt::WindowModal);
 
     this->setCentralWidget(w);
     this->resize(600, 500);

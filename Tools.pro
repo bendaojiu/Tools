@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,14 +29,14 @@ SOURCES += main.cpp\
     picture/picturewidget.cpp \
     mainwidget.cpp \
     picture/imagemosaicking.cpp \
-    picture/pdf2image.cpp
+    picture/image2pdf.cpp
 
 HEADERS  += mainwindow.h \
     picture/picturewidget.h \
     mainwidget.h \
     imagemosaicking.h \
     picture/imagemosaicking.h \
-    picture/pdf2image.h
+    picture/image2pdf.h
 
 # 添加opencv
 INCLUDEPATH += /usr/local/include/opencv    \
@@ -48,5 +49,5 @@ LIBS += /usr/local/lib/libopencv_highgui.so \
         /usr/local/lib/libopencv_imgcodecs.so
 
 # 添加poppler
-PKGCONFIG += poppler-qt5
-CONFIG += c++11 link_pkgconfig
+#PKGCONFIG += poppler-qt5
+#CONFIG += c++11 link_pkgconfig

@@ -25,6 +25,7 @@ signals:
 
 public slots:
     void showImageMosaicking();             // 用于显示图片拼接的窗口
+    void showImage2Pdf();                   // 用于显示图片转为PDF的窗口
 
 };
 
