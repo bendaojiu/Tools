@@ -24,6 +24,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    picture/picturewidget.cpp \
+    mainwidget.cpp \
+    picture/imagemosaicking.cpp \
+    picture/pdf2image.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    picture/picturewidget.h \
+    mainwidget.h \
+    imagemosaicking.h \
+    picture/imagemosaicking.h \
+    picture/pdf2image.h
+
+# 添加opencv
+INCLUDEPATH += /usr/local/include/opencv    \
+               /usr/local/include/opencv2   \
+               /usr/local/include
+
+LIBS += /usr/local/lib/libopencv_highgui.so \
+        /usr/local/lib/libopencv_core.so    \
+        /usr/local/lib/libopencv_imgproc.so \
+        /usr/local/lib/libopencv_imgcodecs.so
+
+# 添加poppler
+PKGCONFIG += poppler-qt5
+CONFIG += c++11 link_pkgconfig
